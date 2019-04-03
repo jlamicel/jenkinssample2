@@ -1,0 +1,20 @@
+Ansible
+
+Ref http://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html
+
+1. installed on virtualbox centpos 7: sudo yum install ansible
+
+2. edited /etc/ansible/hosts file to add:
+dbdev-01.larc.nasa.gov
+dbtest-01.larc.nasa.gov
+
+3. ssh config
+
+ssh-agent bash
+ssh-keygen -t rsa -C "jeff.lamicela@nasa.gov"
+(no passphrase)
+ssh-add ~/.ssh.id_rsa
+ssh-copy-id jlamicel@dbdev-01
+ssh-copy-id jlamicel@dbtest-01
+
+4. ansible all -m ping
